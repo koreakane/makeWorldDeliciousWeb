@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import useAsync from "../modules/useAsync";
 import { getStoreInfo, getInfluencerInfo } from "../modules/serverAPI";
+import RestaurantSingleComponent from "../components/RestaurantSingleComponent";
 
 const App = () => {
   const [storeState, getStore] = useAsync(() => getStoreInfo(), [], false);
-  const [influencerState, getInfluencer] = useAsync(() => getInfluencerInfo(), [], false);
-  const [currentLocationi, setCurrentLocationi] = useState(null)
+  const [influencerState, getInfluencer] = useAsync(
+    () => getInfluencerInfo(),
+    [],
+    false
+  );
+  const [currentLocation, setcurrentLocation] = useState(null);
 
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, []);
 
   const {
     loading: storeLoading,
@@ -26,9 +29,11 @@ const App = () => {
 
   useEffect(() => {}, []);
 
-  return <div className="App">
-    
-  </div>;
+  return (
+    <div className="App">
+      <RestaurantSingleComponent />
+    </div>
+  );
 };
 
 export default App;
