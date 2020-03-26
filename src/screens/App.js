@@ -18,7 +18,7 @@ const App = () => {
     error: storeError
   } = storeState;
 
-  const {
+  const { 
     loading: influencerLoading,
     data: influencerData,
     error: influencerError
@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {}, []);
 
   return <div className="App">
-    
+    ㅎㅇ
   </div>;
 };
 
